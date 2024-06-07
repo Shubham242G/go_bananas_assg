@@ -8,7 +8,7 @@ const Weather = () => {
     const [location, setLocation] = useState('')
     const [error, setError] = useState(false);
 
-    const URL = process.env.REACT_APP_WEATHER_API;
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8a1ddca06c316262a4712a1e22aeda07`;
 
     const searchLocation = (event) => {
         if (event.key === 'Enter') {
