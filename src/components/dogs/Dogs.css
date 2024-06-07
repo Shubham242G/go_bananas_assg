@@ -1,0 +1,26 @@
+
+.heading{
+    display: flex;
+    justify-content: center;
+    font-weight:500;
+    font-size: 40px;
+    align-items: center;
+    padding-top: 5px;
+    color: black;
+}
+
+.searchBar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dogsearch{
+    margin: 20px 10px;
+    background-color: antiquewhite;
+}
+
+.searchButton{
+    margin-top: 23px;
+    margin-left: 15px;
+}

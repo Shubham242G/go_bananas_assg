@@ -1,0 +1,15 @@
+.home{
+    height: 100vh;
+    background: url('../../assets/Homepage.jpg') no-repeat center center/cover;
+    width: 100%;
+}
+
+.buttons{
+    position:fixed;
+    top: 50%;
+    left: 45%;
+}
+
+.buttons .weather{
+    margin-right: 50px;
+}
