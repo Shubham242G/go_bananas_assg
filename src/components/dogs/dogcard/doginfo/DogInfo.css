@@ -1,11 +1,13 @@
 .dogname {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 .dogimage {
     max-height: 300px;
     margin-bottom: 20px;
+    max-width: 95%;
 }
 
 .content{

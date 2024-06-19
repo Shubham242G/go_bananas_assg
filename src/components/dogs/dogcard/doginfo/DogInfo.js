@@ -28,19 +28,19 @@ const DogInfo = () => {
             {
                 singleDog.map((item) => {
                     return (
-                        <Container key={item.id} >
+                        <Container style={{overflow:'hidden'}} key={item.id} >
                             <h1 className='dogname'>{item.name}</h1>
                             <Link className='back_button' to='/dogs'>Back</Link>
                             <div className='content'>
                                 <img className='dogimage' src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} />
                                 <article>
-                                    This dog belongs to the {item.breed_group} breed of dogs.
-                                    They normally have a height of {item.height.metric} cm and
-                                    their weight is between the bracket of {item.weight.metric} kgs. The life
-                                    span of a {item.name} is around {item.life_span}. These hounds are beleived to
-                                    be originated in {item.origin}.
-
-                                    They are generally {item.temperament}.
+                                    
+                                    {item.breed_group && <>This dog belongs to the {item.breed_group} breed of dogs.</>}
+                                    They normally have a height of {item.height.metric} cms and
+                                    their weight is in the bracket of {item.weight.metric} kgs. {item.life_span && <>The life
+                                    span of a {item.name} is around {item.life_span}</>}. {item.origin && <>These hounds are beleived to
+                                    be originated in {item.origin}.</>}
+                                    {item.temperament && <>They are generally {item.temperament} dogs.</>}
 
                                 </article>
                             </div>
