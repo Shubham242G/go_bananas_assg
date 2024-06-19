@@ -10,22 +10,20 @@ const Dogs = () => {
     const [dogs, setDogs] = useState([])
     const [search, setSearch] = useState('')
     const [noDog, setNoDog] = useState(false);
-    const [page, setPage] = useState(1);
 
 
     const fetchDogs = () => {
-        const URL = `https://api.thedogapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY}&?page=${10}`;
+        const URL = `https://api.thedogapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY}`;
         axios(URL).then((response) => {
             setNoDog(false)
             setDogs(response.data)
-            console.log(response.data)
         }).catch((error) => {
             console.log(error);
         })
     }
 
     const searchForDog = () => {
-        const URL = `https://api.thedogapi.com/v1/breeds/search?q=${search}&?api_key=${process.env.REACT_APP_API_KEY}&?page=${page}`;
+        const URL = `https://api.thedogapi.com/v1/breeds/search?q=${search}&?api_key=${process.env.REACT_APP_API_KEY}`;
         axios(URL).then((response) => {
             if (response.data.length !== 0) {
                 setNoDog(false)
@@ -48,7 +46,7 @@ const Dogs = () => {
 
     useEffect(() => {
         const Dogs = fetchDogs();
-    }, [page])
+    }, [])
 
     return (
 
@@ -94,9 +92,6 @@ const Dogs = () => {
                                 )
                             })
                         }
-                         <Pagination count={12}
-                        onChange={(event, value)=> setPage(value)}/>
-
                     </Grid>
                        
             }
